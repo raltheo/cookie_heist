@@ -84,7 +84,7 @@ export default function Dashboard() {
       <Header />
       <Loading/>
       <Mobile/>
-      <div class="container_dashboard">
+      <div className="container_dashboard">
         <div className='dashboard_bonjour'>
           <h1>Bonjour {data.username} :)</h1>
         </div>

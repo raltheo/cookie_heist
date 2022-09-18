@@ -153,7 +153,7 @@ export default function Admin() {
             <Header />
             <Loading />
             <Mobile/>
-            <div class="container_admin">
+            <div className="container_admin">
                 <div className='container_card_newkey'>
                     <div className='card_newkey'>
                         <div className='titre_newkey'>

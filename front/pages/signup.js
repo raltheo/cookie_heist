@@ -52,20 +52,20 @@ export default function Signup() {
       </Head>
       <Header />
       <Mobile/>
-      <div class="container">
-        <div class="card_signup">
+      <div className="container">
+        <div className="card_signup">
             <h3 className='h3_login'>Inscription</h3>
-            <div class="inputBox">
+            <div className="inputBox">
                 <input type="text" required="required" value={email} onChange={handleChangeEmail}/>
                 <span>Username</span>
             </div>
 
-            <div class="inputBox">
+            <div className="inputBox">
                 <input type="password" required="required" value={password} onChange={handleChangePassword}/>
                 <span>Password</span>
             </div>
 
-            <div class="inputBox">
+            <div className="inputBox">
                 <input type="password" required="required" value={key} onChange={handleChangeKey}/>
                 <span>Key</span>
             </div>
