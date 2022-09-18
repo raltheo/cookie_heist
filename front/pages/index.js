@@ -45,7 +45,7 @@ export default function Home() {
         </div>
         <div className='accueil_2'>
           <div className='container_texte_accueil_2'>
-            <p>Cookie heist est encore jeune et nous sommes continuellement en train de nous améliorer, si vous avez des idées a nous faire part n'hésitez pas</p>
+            <p>Cookie heist est encore jeune et nous sommes continuellement en train de nous améliorer, si vous avez des idées a nous faire part n&apos;hésitez pas</p>
           </div>
           <div className='container_moyens_paiement'>
             <p>Moyens de paiements :</p>
