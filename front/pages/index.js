@@ -66,7 +66,7 @@ export default function Home() {
               </div>
               <div className='container_btn_prix'>
                 <div className='div_btn_prix'>
-                  <p>Acheter</p>
+                <Link href="https://discord.gg/d2DRJcTFud"><p>Acheter</p></Link>
                 </div>
               </div>
             </div>
@@ -80,7 +80,7 @@ export default function Home() {
               </div>
               <div className='container_btn_prix'>
                 <div className='div_btn_prix'>
-                  <p>Acheter</p>
+                <Link href="https://discord.gg/d2DRJcTFud"><p>Acheter</p></Link>
                 </div>
               </div>
             </div>
@@ -95,7 +95,7 @@ export default function Home() {
               </div>
               <div className='container_btn_prix'>
                 <div className='div_btn_prix'>
-                  <p>Acheter</p>
+                  <Link href="https://discord.gg/d2DRJcTFud"><p>Acheter</p></Link>
                 </div>
               </div>
             </div>
