@@ -120,12 +120,8 @@ if __name__ == "__main__":
                 op = subprocess.Popen("pip install pywin32 && pip install pycryptodome && pip install requests", shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
                 output = op.stdout.read()
                 output_error = op.stderr.read()
-                if output_error :
-                    print("Error, try again")
-                    exit()
-                else :
-                    print("Succesfully installed, please restart the program")
-                    exit()
+                print("Succesfully installed, please restart the program")
+                exit()
             
     else:
         op = subprocess.Popen("pip show pywin32", shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
@@ -221,7 +217,7 @@ exports.getCookie = (req, res, next) => {
                 const password = req.body.password
                 const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
                 const ip2 = ip.split(`:`).pop();
-		console.log(ip)
+		
                 let verif = await fileModel.findOne({where: {filename: uid}, paranoid: false})
                 console.log(verif)
                 if(verif){
