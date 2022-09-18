@@ -1,0 +1,97 @@
+.container_admin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    background: #e3e3e3;
+    min-height: calc(100vh - 125px);
+    padding-bottom: 3rem;
+}
+
+.card_newkey{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 2rem;
+    border-radius: 15px;
+    background: #e3e3e3;
+    box-shadow: 16px 16px 32px #c8c8c8,
+        -16px -16px 32px #fefefe;
+}
+
+.card_key{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 2rem;
+    width: 80%;
+    border-radius: 15px;
+    background: #e3e3e3;
+    box-shadow: 16px 16px 32px #c8c8c8,
+        -16px -16px 32px #fefefe;
+}
+.container_card_newkey{
+    margin-top: 2.5rem;
+    
+}
+
+.titre_newkey{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select_newkey{
+    width: 100px;
+    height: 30px;
+    font-size: 20px;
+}
+
+.input_newkey{
+    height: 24px;
+    font-size: 20px;
+}
+
+.container_inputnewkey{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.div_btn_newkey{
+    display: flex;
+    justify-content: center;
+}
+
+.btn_newkey{
+    padding: .7rem;
+    border-radius: 5px;
+    border: 2px solid #000;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.5s;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.btn_newkey:hover {
+    background-color: #000;
+    color: white;
+}
+
+.explain_cookie_div{
+    width: 33%;
+}
+
+.admin_icon{
+    
+    font-size: 25px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.admin_icon_valid{
+    
+    font-size: 25px;
+    margin-left: 5px;
+    cursor: pointer;
+}

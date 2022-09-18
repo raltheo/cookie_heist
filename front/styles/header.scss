@@ -1,0 +1,42 @@
+.container_header{
+    background-color: black;
+    padding: 30px;
+    color: white;
+    height: 65px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: auto;
+}
+.h2_header{
+    margin: 0;
+    font-size: 40px;
+    background: linear-gradient(to right, #ef2a20 0%, #d09494 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.titre_header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.active_header{
+    cursor: pointer;
+    text-decoration: #06bcee underline 2px;
+}
+
+.inactive_header{
+    cursor: pointer;
+}
+
+.nav_header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 20px;
+}

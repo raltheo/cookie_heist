@@ -1,0 +1,62 @@
+.container_dashboard{
+    display: flex;
+    flex-direction: column;
+    background: #e3e3e3;
+    min-height: calc(100vh - 125px);
+}
+
+.dashboard_bonjour{
+    display: flex;
+    margin-left:2rem;
+}
+
+.paylaod_dashboard{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    width: 70%;
+    padding: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    border-radius: 15px;
+    background: #e3e3e3;
+    box-shadow: 16px 16px 32px #c8c8c8,
+        -16px -16px 32px #fefefe;
+}
+
+.code_dashboard{
+    font-size: 15px;
+    color: white;
+    width: 99%;
+    overflow-wrap: break-word;
+}
+
+.container_code_dashboard{
+    background-color: #7b5eea;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 80%;
+    display: flex;
+    
+    justify-content: center;
+}
+
+.container_victimes{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.container_explain_cookie{
+    display: flex;
+    width: 100%;
+    border-bottom: white solid 1px
+}
+.explain_cookie{
+    width: 33%;
+}
+.explain_cookie_icon{
+    font-size: 30px;
+    padding-bottom: 5px;
+}

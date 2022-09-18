@@ -1,0 +1,127 @@
+.container_accueil{
+    position: relative;
+    color: white;
+}
+.accueil_1{
+    background-color: #7b5eea;
+    height: calc(100vh - 125px);
+    display: flex;
+    align-items: flex-end;
+}
+
+.cookie_img{
+    position: absolute;
+    background-image: url("../public/cookie.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 570px;
+    height: 570px;
+    display: flex;
+    opacity: .3;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container_titre_accueil{
+    padding: 1rem;
+    position: relative;
+    z-index: 3;
+    width: 40%;
+}
+
+.titre_accueil{
+    font-size: 40px;
+}
+
+.text_accueil{
+    font-size: 20px;
+}
+
+.container_btn_accueil{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.div_btn_accueil{
+    background-color: #c7130a;
+    padding: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.p_btn_accueil{
+    margin: 0;
+}
+
+.accueil_2{
+    background-color: black;
+    padding-top: 2rem;
+}
+
+.container_texte_accueil_2{
+    text-align: center;
+    width: 70%;
+    margin: auto;
+}
+
+.container_prix{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+.prix{
+    width: 25%;
+    border: 2px solid #06bcee;
+    border-radius: 15px;
+}
+
+.container_titre_prix{
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #06bcee;
+}
+
+.body_prix{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container_btn_prix{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    border-top: #06bcee 2px solid;
+}
+
+.div_btn_prix{
+    background-color: #7b5eea;
+    padding: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.container_moyens_paiement{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.container_icon_prix{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.icon_prix{
+    font-size: 30px;
+}

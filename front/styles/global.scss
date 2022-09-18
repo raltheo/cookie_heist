@@ -1,0 +1,18 @@
+@import '/styles/header.scss';
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap');
+@import '/styles/accueil.scss';
+@import '/styles/login.scss';
+@import '/styles/admin.scss';
+@import '/styles/dashboard.scss';
+@import '/styles/loading.scss';
+@import '/styles/profile.scss';
+body{
+    margin: 0;
+    font-family: 'Sora', sans-serif;
+
+}
+
+p{
+    font-size: 20px;
+    margin: 0;
+}
