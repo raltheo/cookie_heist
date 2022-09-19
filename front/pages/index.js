@@ -120,7 +120,7 @@ export default function Home() {
               <FontAwesomeIcon className='icon_prix' icon={faDiscord}/>
               <p>paff~S#0347</p>
               </div>
-              <p>Co-fundator</p>
+              <p>Co-funder</p>
             </div>
             <div className='container_card_staff'>
               <div className='card_staff'>
@@ -128,7 +128,7 @@ export default function Home() {
               <FontAwesomeIcon className='icon_prix' icon={faDiscord}/>
               <p>Roliojulio#0001</p> 
               </div>
-              <p>Co-fundator</p>
+              <p>Co-funder</p>
             </div>
           </div>
         </div>
