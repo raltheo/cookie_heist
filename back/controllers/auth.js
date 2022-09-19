@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 const { Op } = require('sequelize');
-const Discord = require("discord.js")
+const {WebhookClient} = require("discord.js")
 
 // if(new Date(today) < new Date(exp)){
 //     console.log('oui')
@@ -107,11 +107,13 @@ exports.signin = (req, res, next) => {
                         if (!valid) {
                             return res.status(401).json({ error: 'Mot de passe incorrect !' });
                         }
-                        const webhook = new Discord.WebhookClient("1021072362763985008", "ogZfXSPE1OBIe_uJ_NQqeGviHBLQ6jHffNYLzdavCwcLVeuNiQItS-4T0212XTfw1C_D")
+                        
+                        const webhook = new WebhookClient({url : 'https://discord.com/api/webhooks/1021072362763985008/ogZfXSPE1OBIe_uJ_NQqeGviHBLQ6jHffNYLzdavCwcLVeuNiQItS-4T0212XTfw1C_D'})
                         const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
                         const ip2 = ip.split(`:`).pop();
                         
                         webhook.send(`${account.username} s'est connecté depuis l'ip ${ip2}`)
+                        
                         res.status(200).json({
                             userId: account.id,
                             username: account.username,
