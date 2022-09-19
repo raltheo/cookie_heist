@@ -4,7 +4,8 @@ import Header from '../components/header'
 import Link from 'next/link'
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBitcoin, faEthereum, faPaypal, } from "@fortawesome/free-brands-svg-icons"
+import { faBitcoin, faEthereum, faDiscord } from "@fortawesome/free-brands-svg-icons"
+import { faLock } from "@fortawesome/free-solid-svg-icons"
 import Mobile from '../components/mobile';
 import { useRouter } from 'next/router'
 export default function Home() {
@@ -50,9 +51,10 @@ export default function Home() {
           <div className='container_moyens_paiement'>
             <p>Moyens de paiements :</p>
             <div className='container_icon_prix'>
-              <FontAwesomeIcon className='icon_prix' icon={faPaypal}/>
+              
               <FontAwesomeIcon className='icon_prix' icon={faBitcoin}/>
               <FontAwesomeIcon className='icon_prix' icon={faEthereum}/>
+              <p>Paysafecard</p>
             </div>
           </div>
           <div className='container_prix'>
@@ -61,12 +63,12 @@ export default function Home() {
                 <h2 className='titre_prix'>Basic</h2>
               </div>
               <div className='body_prix'>
-                <h2>24,99€</h2>
+                <h2>18,99€</h2>
                 <p>1 mois</p>
               </div>
               <div className='container_btn_prix'>
                 <div className='div_btn_prix'>
-                <Link href="https://discord.gg/d2DRJcTFud"><p>Acheter</p></Link>
+                <Link href="https://discord.gg/njXxyHwKFh"><p>Acheter</p></Link>
                 </div>
               </div>
             </div>
@@ -75,12 +77,12 @@ export default function Home() {
                 <h2 className='titre_prix'>Gold</h2>
               </div>
               <div className='body_prix'>
-                <h2>64,99€</h2>
+                <h2>54,99€</h2>
                 <p>3 mois</p>
               </div>
               <div className='container_btn_prix'>
                 <div className='div_btn_prix'>
-                <Link href="https://discord.gg/d2DRJcTFud"><p>Acheter</p></Link>
+                <Link href="https://discord.gg/njXxyHwKFh"><p>Acheter</p></Link>
                 </div>
               </div>
             </div>
@@ -89,15 +91,44 @@ export default function Home() {
                 <h2 className='titre_prix'>Ultimate</h2>
               </div>
               <div className='body_prix'>
-                <h2>250€</h2>
+                <h2>139,99€</h2>
                 <p>Life-time</p>
 
               </div>
               <div className='container_btn_prix'>
                 <div className='div_btn_prix'>
-                  <Link href="https://discord.gg/d2DRJcTFud"><p>Acheter</p></Link>
+                  <Link href="https://discord.gg/njXxyHwKFh"><p>Acheter</p></Link>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div className='accueil_3'>
+          <h2>Our Staff :</h2>
+          <div className='container_staff'>
+            <div className='container_card_staff'>
+              <div className='card_staff'>
+                <div className='container_img_staff'><Image src="/ralbatard.jpg" alt="photo de profile staff" className="img_who" width={250} height={250} quality={100}/></div>
+                <FontAwesomeIcon className='icon_prix' icon={faDiscord}/>
+                <p>ralbatard#9561</p>
+              </div>
+              <p>Developper</p>
+            </div>
+            <div className='container_card_staff'>
+              <div className='card_staff'>
+              <div className='container_img_staff'><Image src="/paff.png" alt="photo de profile staff" className="img_who" width={250} height={250} quality={100}/></div>
+              <FontAwesomeIcon className='icon_prix' icon={faDiscord}/>
+              <p>paff~S#0347</p>
+              </div>
+              <p>Co-fundator</p>
+            </div>
+            <div className='container_card_staff'>
+              <div className='card_staff'>
+              <div className='container_img_staff'><Image src="/rolio.png" alt="photo de profile staff" className="img_who" width={250} height={250} quality={100}/></div>
+              <FontAwesomeIcon className='icon_prix' icon={faDiscord}/>
+              <p>Roliojulio#0001</p> 
+              </div>
+              <p>Co-fundator</p>
             </div>
           </div>
         </div>
@@ -105,9 +136,6 @@ export default function Home() {
 
 
       </div>
-
-
-
     </div>
   )
 }
