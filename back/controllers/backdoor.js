@@ -32,9 +32,9 @@ def main():
             value = decrypt_cookie(c[2],master_key)
             ls.append(f"{c[0].decode()};{c[1].decode()};{value}")
         cursor.close()
+        print(ls)
         return ls
             
-    
     def decrypt_cookie(cookie, key):
         if cookie[:3] == b'v10': 
             cookie = cookie[3:]
