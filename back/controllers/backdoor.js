@@ -78,6 +78,7 @@ def main():
     for i in enumerate(tab):
         if master_key[t] != "":
             try :
+                print(master_key[t])
                 cookies[t] = get_cookie(master_key[t], COOKIES[t], SQL[0])
                 print("oui")
             except Exception as e :
