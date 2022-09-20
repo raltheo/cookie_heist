@@ -185,3 +185,35 @@
 .img_who{
     object-fit: cover;
 }
+
+@media screen and (max-width: 675px) {
+    .container_prix{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .prix{
+        width: 60%;
+    }
+    .container_staff{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .cookie_img{
+        display: none;
+    }
+    .accueil_1{
+        justify-content: center;
+        align-items: center;
+    }
+    .container_titre_accueil{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .text_accueil{
+        text-align: center;
+    }
+}

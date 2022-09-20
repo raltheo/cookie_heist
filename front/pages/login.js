@@ -3,7 +3,6 @@ import Header from '../components/header'
 import { instance } from "../axios"
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'
-import Mobile from '../components/mobile';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 export default function Login() {
@@ -50,7 +49,6 @@ export default function Login() {
         <link rel="icon" type="image/png" href="/icon.png" />
       </Head>
       <Header />
-      <Mobile/>
       <div className="container">
         <div className="card">
             <h3 className='h3_login'>Login</h3>

@@ -95,3 +95,12 @@
     margin-left: 5px;
     cursor: pointer;
 }
+
+@media screen and (max-width: 500px) {
+    .input_newkey{
+        width: 80%;
+    }
+    .select_newkey{
+        width: 75px;
+    }
+}

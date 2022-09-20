@@ -6,7 +6,6 @@ import Loading from '../components/loading';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileArrowDown } from "@fortawesome/free-solid-svg-icons"
 import JsFileDownloader from 'js-file-downloader';
-import Mobile from '../components/mobile';
 import { useRouter } from 'next/router'
 
 export default function Dashboard() {
@@ -83,7 +82,6 @@ export default function Dashboard() {
       </Head>
       <Header />
       <Loading/>
-      <Mobile/>
       <div className="container_dashboard">
         <div className='dashboard_bonjour'>
           <h1>Bonjour {data.username} :)</h1>

@@ -40,3 +40,42 @@
     gap: 20px;
     font-size: 20px;
 }
+.nav_header_mobile{
+    display: none;
+}
+.toggle_header{
+    display: none;
+}
+@media screen and (max-width: 675px) {
+    .nav_header{
+        display: none;
+    }
+    .toggle_header{display: flex;}
+    .nav_header_mobile{
+        position: fixed;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        left: 0;
+        display: flex;
+        background-color: white;
+        z-index: 999;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        color: black;
+    }
+    .cross_header{
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .h2_header{
+        font-size: 25px;
+    }
+}

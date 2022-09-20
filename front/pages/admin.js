@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faCheck, faFileArrowDown } from "@fortawesome/free-solid-svg-icons"
 import Loading from '../components/loading';
 import JsFileDownloader from 'js-file-downloader';
-import Mobile from '../components/mobile';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 export default function Admin() {
@@ -152,7 +151,6 @@ export default function Admin() {
             </Head>
             <Header />
             <Loading />
-            <Mobile/>
             <div className="container_admin">
                 <div className='container_card_newkey'>
                     <div className='card_newkey'>

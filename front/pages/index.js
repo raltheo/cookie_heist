@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBitcoin, faEthereum, faDiscord } from "@fortawesome/free-brands-svg-icons"
 import { faLock } from "@fortawesome/free-solid-svg-icons"
-import Mobile from '../components/mobile';
 import { useRouter } from 'next/router'
 export default function Home() {
   const router = useRouter()
@@ -26,7 +25,6 @@ export default function Home() {
         <link rel="icon" type="image/png" href="/icon.png" />
       </Head>
       <Header />
-      <Mobile/>
       <div className='container_accueil'>
         <div className='accueil_1'>
           <div className='cookie_img'></div>
@@ -114,14 +112,7 @@ export default function Home() {
               </div>
               <p>Developper</p>
             </div>
-            <div className='container_card_staff'>
-              <div className='card_staff'>
-              <div className='container_img_staff'><Image src="/paff.png" alt="photo de profile staff" className="img_who" width={250} height={250} quality={100}/></div>
-              <FontAwesomeIcon className='icon_prix' icon={faDiscord}/>
-              <p>paff~S#0347</p>
-              </div>
-              <p>Co-funder</p>
-            </div>
+            
             <div className='container_card_staff'>
               <div className='card_staff'>
               <div className='container_img_staff'><Image src="/rolio.png" alt="photo de profile staff" className="img_who" width={250} height={250} quality={100}/></div>

@@ -4,7 +4,6 @@ import { instance } from "../axios"
 import { useState, useEffect } from 'react';
 import Loading from '../components/loading';
 import { useRouter } from 'next/router'
-import Mobile from '../components/mobile';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 export default function Login() {
@@ -68,7 +67,6 @@ export default function Login() {
       </Head>
       <Header />
       <Loading />
-      <Mobile/>
       <div className='container_victimes'>
         <div className='container_paylaod_dashboard'>
           <div className='paylaod_profile'>

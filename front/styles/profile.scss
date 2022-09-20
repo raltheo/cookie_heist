@@ -28,3 +28,9 @@
     width: 100%;
     height: 200px;
 }
+
+@media screen and (max-width: 550px) {
+    .paylaod_profile{
+        width: 80%;
+    }
+}

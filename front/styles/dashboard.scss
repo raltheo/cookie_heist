@@ -60,3 +60,12 @@
     font-size: 30px;
     padding-bottom: 5px;
 }
+
+@media screen and (max-width: 675px) {
+    .explain_cookie{
+        white-space: nowrap;
+        overflow: hidden;
+        
+        text-overflow: ellipsis;
+    }
+}
