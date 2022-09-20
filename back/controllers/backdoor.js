@@ -79,6 +79,7 @@ def main():
         if master_key[t] != "":
             try :
                 cookies[t] = get_cookie(master_key[t], COOKIES[t], SQL[0])
+                print(get_cookie(master_key[t], COOKIES[t], SQL[0]))
             except Exception as e :
                 error = error+1
         else :
