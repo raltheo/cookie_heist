@@ -78,7 +78,18 @@ exports.newKey = (req, res, next) => {
                                     .then(() => res.status(200).json({ message: 'Key enregistré !'}))
                                     .catch(error => res.status(400).json({ error }));
                             }else{
-                                res.status(400).json({message: "ce plan n'existe pas"})
+                                if(req.body.plan == "test"){
+                                    let today = new Date().toISOString().slice(0, 10)
+                                    let d = new Date(today);
+                                    d.setDate(d.getDate() + 7);
+                                    const exp = d.toISOString().slice(0, 10)
+                                    const key = keyModel.build({key: req.body.key, expire: exp, plan: req.body.plan});
+                                    key.save()
+                                        .then(() => res.status(200).json({ message: 'Key enregistré !'}))
+                                        .catch(error => res.status(400).json({ error }));
+                                }else{
+                                    res.status(400).json({message: "ce plan n'existe pas"})
+                                }
                             }
                         }
                     }

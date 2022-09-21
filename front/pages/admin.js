@@ -169,6 +169,7 @@ export default function Admin() {
                                     <option value="basic">Basic</option>
                                     <option value="gold">Gold</option>
                                     <option value="ultimate">Ultimate</option>
+                                    <option value="test">Test</option>
                                 </select>
                             </div>
 
