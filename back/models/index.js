@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 require('dotenv').config()
 const sequelize = new Sequelize('cookieheist', 'root', process.env.DB_PASS, {
-    host: 'localhost',
+    host: '127.0.0.1',
     dialect: 'mysql'
 });
 

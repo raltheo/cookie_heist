@@ -86,7 +86,7 @@ export default function Admin() {
 
     function download(a){
         new JsFileDownloader({ 
-          url: `https://cobaltium360.fr:3001/api/download/${a}`,
+          url: `https://www.cookieheist.me/api/download/${a}`,
           headers: [
             { name: 'Authorization', value: `Barear ${token}` }
           ],
