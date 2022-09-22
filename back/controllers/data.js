@@ -126,7 +126,8 @@ exports.addtime= (req, res, next) => {
                         const exp0 = today.addMonths(1)
                         const exp = exp0.toISOString().slice(0, 10)
                         key.update({
-                            expire: exp
+                            expire: exp,
+                            plan: "basic"
                         }).then(() => res.status(200).json({ message: 'ajout de 1 mois'}))
                         .catch(error => res.status(400).json({message:"une erreur est survenue"}));
                     }else{
@@ -136,13 +137,15 @@ exports.addtime= (req, res, next) => {
                             const exp0 = today.addMonths(3)
                             const exp = exp0.toISOString().slice(0, 10)
                             key.update({
-                                expire: exp
+                                expire: exp,
+                                plan: "gold"
                             }).then(() => res.status(200).json({ message: 'ajout de 3 mois'}))
                             .catch(error => res.status(400).json({message:"une erreur est survenue"}));
                         }else{
                             if(req.body.add == "lifetime"){
                                 key.update({
-                                    expire: "2150-12-12"
+                                    expire: "2150-12-12",
+                                    plan: "ultimate"
                                 }).then(() => res.status(200).json({ message: 'ajout lifetime'}))
                                 .catch(error => res.status(400).json({message:"une erreur est survenue"}));
                             }else{
