@@ -16,7 +16,7 @@ exports.getallfile = (req, res, next) => {
     async function allFile(){
         const user = await userModel.findOne({where : {id : req.auth}})
         if(user.isAdmin == 1){
-            const allfile = await fileModel.findAll({order:[ ['createdAt', 'DESC'] ]})
+            const allfile = await fileModel.findAll({where: {fileAdmin:0} , order:[ ['createdAt', 'DESC'] ]})
             res.status(200).send(allfile)
         }else{
             

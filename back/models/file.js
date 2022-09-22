@@ -19,6 +19,11 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: false,
             defaultValue: 0
+        },
+        fileAdmin: {
+            type: Sequelize.INTEGER,
+            allowNull: false,
+            defaultValue: 0
         }
         
     },{paranoid: true}) 
