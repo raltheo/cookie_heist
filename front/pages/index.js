@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBitcoin, faEthereum, faDiscord } from "@fortawesome/free-brands-svg-icons"
 import { faLock } from "@fortawesome/free-solid-svg-icons"
+import YouTube from "react-youtube";
 import { useRouter } from 'next/router'
 export default function Home() {
   const router = useRouter()
@@ -14,8 +15,29 @@ export default function Home() {
       router.push("/dashboard")
     }
     
+    if(window.innerWidth <= 675) setTel(true)
 
   }, [])
+  const [tel , setTel ] = useState(false) 
+  const opts = {
+    height: "390",
+    width: "640",
+    playerVars: {
+      autoplay: 1,
+    },
+  };
+  const opts2 = {
+    height: "290",
+    width: "320",
+    playerVars: {
+      autoplay: 1,
+    },
+  };
+
+  function onReady(e){
+    e.target.pauseVideo();
+  }
+
 
   return (
     <div>
@@ -121,9 +143,22 @@ export default function Home() {
               </div>
               <p>Co-funder</p>
             </div>
+
+            <div className='container_card_staff'>
+              <div className='card_staff'>
+              <div className='container_img_staff'><Image src="/paff.png" alt="photo de profile staff" className="img_who" width={250} height={250} quality={100}/></div>
+              <FontAwesomeIcon className='icon_prix' icon={faDiscord}/>
+              <p>paff~S#0347</p> 
+              </div>
+              <p>Discord Administrator</p>
+            </div>
           </div>
         </div>
-
+        <div className='accueil_4'>
+          <h2>Explication vidéos :</h2>
+          {!tel && <YouTube videoId="T0wLKc3W8Nc" opts={opts} onReady={onReady} />}
+          {tel && <YouTube videoId="T0wLKc3W8Nc" opts={opts2} onReady={onReady} />}
+        </div>
 
 
       </div>
