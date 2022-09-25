@@ -8,10 +8,7 @@ import { faBitcoin, faEthereum, faDiscord } from "@fortawesome/free-brands-svg-i
 import { faLock } from "@fortawesome/free-solid-svg-icons"
 import YouTube from "react-youtube";
 import { useRouter } from 'next/router'
-import React, { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
-import Cookie from '../components/Cookie.js'
+
 
 export default function Home() {
   const router = useRouter()
@@ -164,7 +161,13 @@ export default function Home() {
           {!tel && <YouTube videoId="T0wLKc3W8Nc" opts={opts} onReady={onReady} />}
           {tel && <YouTube videoId="T0wLKc3W8Nc" opts={opts2} onReady={onReady} />}
         </div>
-        
+        <div className='accueil_5'>
+          <div className='div_btn_accueil'>
+            <Link href="/3dcookie">
+              <p className='p_btn_accueil'>View our 3d cookie</p>
+            </Link>
+          </div>
+        </div>
 
       </div>
     </div>
