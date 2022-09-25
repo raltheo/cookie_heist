@@ -196,6 +196,14 @@
     align-items: center;
 }
 
+.accueil_5{
+    background-color: #7b5eea;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media screen and (max-width: 675px) {
     .container_prix{
         flex-direction: column;

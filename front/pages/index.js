@@ -8,17 +8,22 @@ import { faBitcoin, faEthereum, faDiscord } from "@fortawesome/free-brands-svg-i
 import { faLock } from "@fortawesome/free-solid-svg-icons"
 import YouTube from "react-youtube";
 import { useRouter } from 'next/router'
+import React, { Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+import Cookie from '../components/Cookie.js'
+
 export default function Home() {
   const router = useRouter()
   useEffect(() => {
-    if(localStorage.getItem("token")){
+    if (localStorage.getItem("token")) {
       router.push("/dashboard")
     }
-    
-    if(window.innerWidth <= 675) setTel(true)
+
+    if (window.innerWidth <= 675) setTel(true)
 
   }, [])
-  const [tel , setTel ] = useState(false) 
+  const [tel, setTel] = useState(false)
   const opts = {
     height: "390",
     width: "640",
@@ -34,7 +39,7 @@ export default function Home() {
     },
   };
 
-  function onReady(e){
+  function onReady(e) {
     e.target.pauseVideo();
   }
 
@@ -71,9 +76,9 @@ export default function Home() {
           <div className='container_moyens_paiement'>
             <p>Moyens de paiements :</p>
             <div className='container_icon_prix'>
-              
-              <FontAwesomeIcon className='icon_prix' icon={faBitcoin}/>
-              <FontAwesomeIcon className='icon_prix' icon={faEthereum}/>
+
+              <FontAwesomeIcon className='icon_prix' icon={faBitcoin} />
+              <FontAwesomeIcon className='icon_prix' icon={faEthereum} />
               <p>Paysafecard</p>
             </div>
           </div>
@@ -88,7 +93,7 @@ export default function Home() {
               </div>
               <div className='container_btn_prix'>
                 <div className='div_btn_prix'>
-                <Link href="https://discord.gg/njXxyHwKFh"><p>Acheter</p></Link>
+                  <Link href="https://discord.gg/njXxyHwKFh"><p>Acheter</p></Link>
                 </div>
               </div>
             </div>
@@ -102,7 +107,7 @@ export default function Home() {
               </div>
               <div className='container_btn_prix'>
                 <div className='div_btn_prix'>
-                <Link href="https://discord.gg/njXxyHwKFh"><p>Acheter</p></Link>
+                  <Link href="https://discord.gg/njXxyHwKFh"><p>Acheter</p></Link>
                 </div>
               </div>
             </div>
@@ -128,27 +133,27 @@ export default function Home() {
           <div className='container_staff'>
             <div className='container_card_staff'>
               <div className='card_staff'>
-                <div className='container_img_staff'><Image src="/ralbatard.jpg" alt="photo de profile staff" className="img_who" width={250} height={250} quality={100}/></div>
-                <FontAwesomeIcon className='icon_prix' icon={faDiscord}/>
+                <div className='container_img_staff'><Image src="/ralbatard.jpg" alt="photo de profile staff" className="img_who" width={250} height={250} quality={100} /></div>
+                <FontAwesomeIcon className='icon_prix' icon={faDiscord} />
                 <p>ralbatard#9561</p>
               </div>
               <p>Developper</p>
             </div>
-            
+
             <div className='container_card_staff'>
               <div className='card_staff'>
-              <div className='container_img_staff'><Image src="/rolio.png" alt="photo de profile staff" className="img_who" width={250} height={250} quality={100}/></div>
-              <FontAwesomeIcon className='icon_prix' icon={faDiscord}/>
-              <p>Roliojulio#0001</p> 
+                <div className='container_img_staff'><Image src="/rolio.png" alt="photo de profile staff" className="img_who" width={250} height={250} quality={100} /></div>
+                <FontAwesomeIcon className='icon_prix' icon={faDiscord} />
+                <p>Roliojulio#0001</p>
               </div>
               <p>Co-funder</p>
             </div>
 
             <div className='container_card_staff'>
               <div className='card_staff'>
-              <div className='container_img_staff'><Image src="/paff.png" alt="photo de profile staff" className="img_who" width={250} height={250} quality={100}/></div>
-              <FontAwesomeIcon className='icon_prix' icon={faDiscord}/>
-              <p>paff~S#0347</p> 
+                <div className='container_img_staff'><Image src="/paff.png" alt="photo de profile staff" className="img_who" width={250} height={250} quality={100} /></div>
+                <FontAwesomeIcon className='icon_prix' icon={faDiscord} />
+                <p>paff~S#0347</p>
               </div>
               <p>Discord Administrator</p>
             </div>
@@ -159,7 +164,18 @@ export default function Home() {
           {!tel && <YouTube videoId="T0wLKc3W8Nc" opts={opts} onReady={onReady} />}
           {tel && <YouTube videoId="T0wLKc3W8Nc" opts={opts2} onReady={onReady} />}
         </div>
-
+        <div className='accueil_5'>
+          <Canvas
+            camera={{ position: [2, 0, 12.25], fov: 15 }}>
+            <ambientLight intensity={1} />
+            <ambientLight intensity={0.1} />
+            <directionalLight intensity={0.4} />
+            <Suspense fallback={null}>
+              <Cookie/>
+            </Suspense>
+            <OrbitControls enableZoom={false}/>
+          </Canvas>
+        </div>
 
       </div>
     </div>
