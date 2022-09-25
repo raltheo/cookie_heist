@@ -164,7 +164,7 @@ export default function Home() {
           {!tel && <YouTube videoId="T0wLKc3W8Nc" opts={opts} onReady={onReady} />}
           {tel && <YouTube videoId="T0wLKc3W8Nc" opts={opts2} onReady={onReady} />}
         </div>
-        <div className='accueil_5'>
+        {!tel &&<div className='accueil_5'>
           <Canvas
             camera={{ position: [2, 0, 12.25], fov: 15 }}>
             <ambientLight intensity={1} />
@@ -175,7 +175,7 @@ export default function Home() {
             </Suspense>
             <OrbitControls enableZoom={false}/>
           </Canvas>
-        </div>
+        </div>}
 
       </div>
     </div>
