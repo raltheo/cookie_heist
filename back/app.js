@@ -15,11 +15,11 @@ const rateLimit = require('express-rate-limit');
 
 const limiter = rateLimit({
 	windowMs: 15 * 60 * 1000, 
-	max: 25, 
+	max: 100, 
 	standardHeaders: true, 
 	legacyHeaders: false, 
 })
-// app.use(limiter)
+app.use(limiter)
 app.disable('x-powered-by');
 db.sequelize.sync();
 app.use(express.json({limit: '50mb'}));
