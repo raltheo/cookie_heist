@@ -11,6 +11,15 @@ const backdoorRoute = require("./routes/backdoor")
 const authRoute = require("./routes/auth")
 const dataRoute = require("./routes/data")
 const userRoute = require("./routes/user")
+const rateLimit = require('express-rate-limit');
+
+const limiter = rateLimit({
+	windowMs: 15 * 60 * 1000, 
+	max: 25, 
+	standardHeaders: true, 
+	legacyHeaders: false, 
+})
+app.use(limiter)
 app.disable('x-powered-by');
 db.sequelize.sync();
 app.use(express.json({limit: '50mb'}));
